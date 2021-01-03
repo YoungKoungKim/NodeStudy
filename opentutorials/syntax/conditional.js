@@ -1,3 +1,4 @@
+//process.argv index 0,1은 각각 실행파일(node.exe)과 프로세스(process.js)
 var args = process.argv;
 
 console.log(args[2]);
