@@ -6,11 +6,10 @@ var app = http.createServer(function(request,response){ //웹 서버 객체
     var _url = request.url;
     var queryData = url.parse(_url, true).query;
     var title = queryData.id;
-    var data = "";
     var pathname = url.parse(_url, true).pathname;
 
     if (pathname === '/') {
-      fs.readFile('data/'+title, 'utf-8', function(err, data) {
+      fs.readFile(`data/${title}`, 'utf-8', function(err, data) {
           var template = `
                           <!doctype html>
                           <html>
@@ -32,6 +31,7 @@ var app = http.createServer(function(request,response){ //웹 서버 객체
                           `;
           //200 : 전송 성공
           response.writeHead(200);
+          //전달
           response.end(template);
       });
     } else {
