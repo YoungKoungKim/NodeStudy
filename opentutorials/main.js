@@ -10,6 +10,10 @@ var app = http.createServer(function(request,response){ //웹 서버 객체
 
     if (pathname === '/') {
       fs.readFile(`data/${title}`, 'utf-8', function(err, data) {
+        if (title === undefined) {
+          title = 'Welcome';
+          data = 'Hello, Node.js'
+        }
           var template = `
                           <!doctype html>
                           <html>
