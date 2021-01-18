@@ -1,4 +1,4 @@
-pm2 - Node.js의 프로세스 매니저
+pm2 - Node.js의 프로세스 매니저, Node js를 무중단으로 운영할 수 있도록 도와줌
 
 ### NPM으로 설치
 npm install pm2 -g
