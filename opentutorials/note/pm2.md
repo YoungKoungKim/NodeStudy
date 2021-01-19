@@ -6,6 +6,16 @@ npm install pm2 -g
 
 ### pm2시작
 pm2 start XXX.js
+pm2 start XXX.js --watch (수정되는 파일이 있을 시 자동 재시작)
 
 ### pm2로 구동중인 프로세스 확인
 pm2 monit
+
+### pm2 종료
+pm2 stop main(프로세스id)
+
+### pm2 log
+pm2 log
+
+### pm2로 구동중인 프로세스 확인
+pm2 list
