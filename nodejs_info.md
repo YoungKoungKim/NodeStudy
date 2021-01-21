@@ -24,6 +24,6 @@
 - CPU 사용율이 많은 어플리케이션에 부적합
 
 
+
 [알아두어야 할 사항들]
-NodeJS의 패키지 생태계는 npm인데, 이것은 세계에서 가장 큰 오픈소스 라이브러리 생태계이다.
-npm(node package manager)
+NodeJS의 패키지 생태계는 npm(node package manager)인데, 이것은 세계에서 가장 큰 오픈소스 라이브러리 생태계이다.
