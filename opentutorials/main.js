@@ -94,6 +94,12 @@ var app = http.createServer(function(request,response) {
         var post = qs.parse(body);
         var title = post.title;
         var description = post.description;
+        fs.writeFile(`data/${title}`, description, 'utf8', function (err) {
+          //301 : redirection 하는데 이 주소를 앞으로 영원히 이렇게 바뀐다
+          //302 : redirection
+          response.writeHead(302, {Location: `/?id=${title}`});
+          response.end();
+        });
       });
     } else {
       response.writeHead(404);
