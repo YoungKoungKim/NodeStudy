@@ -62,7 +62,7 @@ var app = http.createServer(function(request,response) {
                         `<h2>${title}</h2><p>${description}</p>`,
                         `<a href="/create">create</a>
                          <a href="/update?id=${title}">update</a>
-                         <form action="/delete_process" method="post" onsubmit="return confirm('삭제하시겠습니까?')">
+                         <form action="/delete_process" method="post" onsubmit="return confirm('삭제하시겠습니까?');">
                             <input type="hidden" name="id" value="${title}">
                             <input type="submit" value="delete">
                          </form>`);
@@ -147,7 +147,30 @@ var app = http.createServer(function(request,response) {
         //console.log(post);
       });
     } else if (pathname === '/delete_process') {
-      
+      var body = '';
+      request.on('data', function(data) {
+        body = body + data;
+      });
+      request.on('end', function() {
+        var post = qs.parse(body);
+        var id = post.id;
+         fs.unlink(`data/${id}`, function(error) {
+           response.writeHead(302, {Location: `/`});
+           response.end();
+         });
+      });
+      // request.on('end', function() {
+      //   var post = qs.parse(body);
+      //   var id = post.id;
+      //   var title = post.title;
+      //   var description = post.description;
+      //   fs.unlink(`data/${id}`, function(error) {
+      //     alert(error);
+      //     alert('삭제되었습니다.');
+      //     response.writeHead(302, {Location: `/`});
+      //     response.end();
+      //   });
+      // });
     } else {
       response.writeHead(404);
       response.end('Not found');
