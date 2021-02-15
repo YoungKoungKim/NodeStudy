@@ -159,18 +159,6 @@ var app = http.createServer(function(request,response) {
            response.end();
          });
       });
-      // request.on('end', function() {
-      //   var post = qs.parse(body);
-      //   var id = post.id;
-      //   var title = post.title;
-      //   var description = post.description;
-      //   fs.unlink(`data/${id}`, function(error) {
-      //     alert(error);
-      //     alert('삭제되었습니다.');
-      //     response.writeHead(302, {Location: `/`});
-      //     response.end();
-      //   });
-      // });
     } else {
       response.writeHead(404);
       response.end('Not found');
