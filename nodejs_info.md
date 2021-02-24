@@ -26,4 +26,4 @@
 
 
 [알아두어야 할 사항들]
-NodeJS의 패키지생태계는 npm(node package manager)인데, 이것은 세계에서 가장 큰 오픈소스 라이브러리 생태계이다.
+NodeJS의 패키지 생태계는 npm(node package manager)인데, 이것은 세계에서 가장 큰 오픈소스 라이브러리 생태계이다.
